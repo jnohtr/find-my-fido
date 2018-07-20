@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="www.thymeleaf.org" xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+
+    <style>
+        body {
+
+            background: url("https://images.pexels.com/photos/352096/pexels-photo-352096.jpeg?auto=compress&cs=tinysrgb&h=350");
+            background-size: cover;
+        }
+        .container
+        {
+            background-color: white;
+            opacity: .9;
+        }
+        img
+        {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+        }
+        .button
+        {
+            background-color: green;
+            border: none;
+            color: black;
+            size: 20px;
+        }
+        a:link {
+            color: darkblue;
+        }
+        a:hover {
+            color: greenyellow;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <img src="https://res.cloudinary.com/dkoqxjnsr/image/upload/v1532009423/s-l300_yrawuy.jpg" width="100">
+
+
+        <h4> Find Fido (& other pets) </h4>
+        lets find together, come back home soon
+        <form action="/add" th:object="${message}" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" th:field="*{id}" />
+
+            Pet Name :
+            <input type="text" id="petname" placeholder="Pet Name" th:field="*{petname}" /><br />
+            Lost Date :
+            <input type="text" id="datelost" placeholder=" Date Lost" th:field="*{datelost}" /><br />
+            Description :
+            <input type="text" id="description" placeholder="Description " th:field="*{description}" /><br />
+            Found :
+            <input type="text" id="petfound" placeholder="Found? " th:field="*{petfound}" /><br />
+            Picture:
+            <input type="file" name="file"} /><br />
+
+
+            <input class="button" type="submit" value="Submit" />
+            </form><br>
+
+
+
+        <!--<h2>Find Fido (& other pets)</h2>-->
+
+
+        <!--&lt;!&ndash;<div sec:authorize="isAuthenticated()">&ndash;&gt;-->
+        <!--&lt;!&ndash;Logged User: <span sec:authentication="name"></span><br>&ndash;&gt;-->
+        <!--&lt;!&ndash;Roles: <span sec:authentication="principal.authorities"></span><br>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="/logout">Logout</a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div sec:authorize="hasAuthority('ADMIN')">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="/showuserprofile" class="badge badge-warning"><h3><Strong>User List</Strong></h3></a></div>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<input type="hidden" th:field="*{id}" />&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    </div>
+
+</body>
+</html>

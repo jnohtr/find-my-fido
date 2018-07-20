@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+
+    <style>
+        body {
+
+            background: url("https://images.pexels.com/photos/352096/pexels-photo-352096.jpeg?auto=compress&cs=tinysrgb&h=350");
+            background-size: cover;
+        }
+        .container
+        {
+            background-color: white;
+            opacity: .9;
+        }
+        img
+        {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+        }
+        .button
+        {
+            background-color: green;
+            border: none;
+            color: black;
+            size: 20px;
+        }
+        a:link {
+            color: darkblue;
+        }
+        a:hover {
+            color: greenyellow;
+        }
+    </style>
+
+    <title>Title</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="/style.css">-->
+    <!--<link rel="stylesheet" href="/style.css" />-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div th:if="${param.error}"> Invalid username and password. </div>
+
+        <div th:if="${param.logout}"> You have been logged out. </div>
+
+
+        <form th:action="@{/login}" method="post">
+
+            <div><label> User Name : <input type="text" name="username" /></label></div>
+
+            <div><label> Password : <input type="password" name="password" /></label></div>
+
+            <div><input type="submit" value="Sign In" /></div>
+        </form>
+
+    </div>
+
+
+</body>
+</html>

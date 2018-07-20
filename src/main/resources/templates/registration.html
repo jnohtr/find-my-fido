@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="www.thymeleaf.org" xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+
+    <style>
+        body {
+
+            background: url("https://images.pexels.com/photos/352096/pexels-photo-352096.jpeg?auto=compress&cs=tinysrgb&h=350");
+            background-size: cover;
+        }
+        .container
+        {
+            background-color: white;
+            opacity: .9;
+        }
+        img
+        {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+        }
+        .button
+        {
+            background-color: green;
+            border: none;
+            color: black;
+            size: 20px;
+        }
+        a:link {
+            color: darkblue;
+        }
+        a:hover {
+            color: greenyellow;
+        }
+    </style>
+
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h4> New User Registration </h4>
+
+        <form autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post">
+
+            Your Name <mark><strong>
+            <!--<span th:if="${fields.hasErrors('firstName')}" th:errors="*{firstName}">-->
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+                    Your Name Error
+                </span> </strong></mark>
+
+            <input type="text" id="name" placeholder="Your Name" th:field="*{name}" /><br />
+
+            Pet Name <mark><strong>
+                <span th:if="${#fields.hasErrors('petname')}" th:errors="*{petname}">
+                    Pet Name Error
+                </span>   </strong></mark>
+
+            <input type="text" id="petname" placeholder="Pet Name" th:field="*{petname}" /><br />
+
+            Email <mark><strong>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                    Email Error
+                </span>  </strong></mark>
+
+            <input type="text" id="email" placeholder="Email" th:field="*{email}" /><br />
+
+            Username <mark><strong>
+                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
+                    UserName Error
+                </span>   </strong></mark>
+
+            <input type="text" id="username" placeholder="Username" th:field="*{username}" /><br />
+
+            Password <mark><strong>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                    PAssword Error
+                </span>   </strong></mark>
+            <input type="text" id="password" placeholder="Password" th:field="*{password}" /><br />
+
+            </span>   </strong></mark>
+
+            <button type="submit" class="btn btn-default"> Submit </button>
+
+        </form>
+    </div>
+
+
+</body>
+</html>
